@@ -10,5 +10,10 @@ public class HelloControllerTest {
 	public void test() {
 		assertEquals(1,1);
 	}
+	
+//	@Test
+//	public void testFail() {
+//		fail("Test is intentionally failing");
+//	}
 
 }
