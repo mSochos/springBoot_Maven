@@ -47,7 +47,7 @@
 					<!-- Excludes integration tests when unit tests are run. -->
 					<excludes>
 						<!-- <exclude>**/IT*.java</exclude> -->
-						<exclude>**/test/**</exclude>
+<!-- 						<exclude>**/test/**</exclude> -->
 					</excludes>
 				</configuration>
 			</plugin>
@@ -93,10 +93,7 @@
 								runtime agent. -->
 							<excludes>
 								<!-- <exclude>**/IT*.java</exclude> -->
-								<exclude>/**test**/</exclude>
-								<exclude>/**test**/**</exclude>
-								<exclude>**/test/**</exclude>
-								<exclude>**/src/test/**</exclude>
+								<exclude>**/hellotests/**</exclude>
 							</excludes>
 							<propertyName>surefireArgLine</propertyName>
 						</configuration>
@@ -116,28 +113,11 @@
 							<outputDirectory>${project.reporting.outputDirectory}/jacoco-ut</outputDirectory>
 							<excludes>
 								<!-- <exclude>**/IT*.java</exclude> -->
-								<exclude>/**test**/</exclude>
-								<exclude>/**test**/**</exclude>
-								<exclude>**/test/**</exclude>
-								<exclude>**/src/test/**</exclude>
-
+								<exclude>**/hellotests/**</exclude>
 							</excludes>
 						</configuration>
 					</execution>
 				</executions>
-				<configuration>
-					<!-- Sets the path to the file which contains the execution data. -->
-					<!-- Sets the name of the property containing the settings for JaCoCo 
-						runtime agent. -->
-					<excludes>
-						<!-- <exclude>**/IT*.java</exclude> -->
-						<exclude>/**test**/</exclude>
-						<exclude>/**test**/**</exclude>
-						<exclude>**/test/**</exclude>
-						<exclude>**/src/test/**</exclude>
-
-					</excludes>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
