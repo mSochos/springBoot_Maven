@@ -47,7 +47,7 @@
 					<!-- Excludes integration tests when unit tests are run. -->
 					<excludes>
 						<!-- <exclude>**/IT*.java</exclude> -->
-<!-- 						<exclude>**/test/**</exclude> -->
+						<!-- <exclude>**/test/**</exclude> -->
 					</excludes>
 				</configuration>
 			</plugin>
@@ -118,6 +118,12 @@
 						</configuration>
 					</execution>
 				</executions>
+				<configuration>
+					<excludes>
+						<exclude>**/hellotests/**</exclude>
+						<exclude>**/src/test/**</exclude>
+					</excludes>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
