@@ -97,8 +97,8 @@
 								<exclude>/**test**/**</exclude>
 								<exclude>**/test/**</exclude>
 								<exclude>**/src/test/**</exclude>
-
 							</excludes>
+							<propertyName>surefireArgLine</propertyName>
 						</configuration>
 					</execution>
 					<!-- Ensures that the code coverage report for unit tests is created 
