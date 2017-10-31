@@ -4,12 +4,15 @@ import java.util.Arrays;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.ApplicationContext;
+import org.springframework.web.WebApplicationInitializer;
 
 @SpringBootApplication
-public class Application {
+public class Application extends SpringBootServletInitializer implements WebApplicationInitializer{
     
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         ApplicationContext ctx = SpringApplication.run(Application.class, args);
         
         System.out.println("Let's inspect the beans provided by Spring Boot:");
@@ -20,5 +23,9 @@ public class Application {
             System.out.println(beanName);
         }
     }
-
+    
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+		return builder.sources(Application.class);
+	}
 }
