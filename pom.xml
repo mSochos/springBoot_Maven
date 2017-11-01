@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.springframework</groupId>
-	<artifactId>initial_springBoot</artifactId>
+	<artifactId>aaa-initial_springBoot</artifactId>
 	<version>0.1.0</version>
 	<packaging>war</packaging>
 	<parent>
@@ -136,6 +136,35 @@
 						<exclude>**/src/test/**</exclude>
 					</excludes>
 				</configuration>
+			</plugin>
+			<plugin>
+				<!-- This is the configuration for the weblogic-maven-plugin -->
+				<groupId>com.oracle.weblogic</groupId>
+				<artifactId>weblogic-maven-plugin</artifactId>
+				<version>12.2.1-3-0</version>
+				<configuration>
+					<middlewareHome>D:\development\servers\weblogic12_Generic\</middlewareHome>
+				</configuration>
+				<executions>
+					<!-- Execute the appc goal during the package phase -->
+					<execution>
+						<id>wls-deploy</id>
+						<phase>pre-integration-test</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+						<configuration>
+							<adminurl>t3://127.0.0.1:7001</adminurl>
+							<user>admin</user>
+							<password>admin1234</password>
+							<source>${project.build.directory}/${project.build.finalName}.${project.packaging}</source>
+							<targets>AdminServer</targets>
+							<verbose>true</verbose>
+							<name>${project.build.finalName}</name>
+						</configuration>
+					</execution>
+
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
